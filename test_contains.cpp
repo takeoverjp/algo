@@ -7,7 +7,7 @@
 TEST (contains, positive)
 {
   int array[] = {0, 1, 2, 3, 4, 5, 6};
-  size_t size = sizeof(array);
+  size_t size = sizeof(array) / sizeof(array[0]);
   ASSERT_TRUE (contains (0, array, size));
   ASSERT_TRUE (contains (1, array, size));
   ASSERT_TRUE (contains (2, array, size));
@@ -24,7 +24,7 @@ TEST (contains, positive)
 TEST (contains, negative)
 {
   int array[] = {-100, -80, -50, -30, -5, -4, -2, -1, 0};
-  size_t size = sizeof(array);
+  size_t size = sizeof(array) / sizeof(array[0]);
   ASSERT_TRUE (contains (-100, array, size));
   ASSERT_TRUE (contains (-80, array, size));
   ASSERT_TRUE (contains (-50, array, size));
@@ -44,7 +44,7 @@ TEST (contains, mix)
 {
   int array[] = {-100, -80, -50, -30, -5, -4, -2, -1, 0,
 		 1, 2, 3, 4, 5, 6};
-  size_t size = sizeof(array);
+  size_t size = sizeof(array) / sizeof(array[0]);
   ASSERT_TRUE (contains (-100, array, size));
   ASSERT_TRUE (contains (-80, array, size));
   ASSERT_TRUE (contains (-50, array, size));
@@ -69,7 +69,7 @@ TEST (contains, mix)
 TEST (contains, invalidArgument)
 {
   int array[] = {0, 1, 2, 3, 4, 5, 6};
-  size_t size = sizeof(array);
+  size_t size = sizeof(array) / sizeof(array[0]);
   ASSERT_FALSE (contains (0, NULL, 0));
   ASSERT_FALSE (contains (0, array, 0));
   ASSERT_FALSE (contains (0, NULL, size));
