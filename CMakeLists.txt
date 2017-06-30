@@ -14,3 +14,8 @@ add_executable(test_contains test_contains.cpp contains.c)
 target_link_libraries(test_contains GTest::GTest GTest::Main)
 add_test(AllTestsInContains test_contains)
 
+add_executable(test_sort test_sort.cpp sort.c)
+#add_executable(main_sort main_sort.cpp sort.c)
+target_link_libraries(test_sort GTest::GTest GTest::Main)
+add_test(AllTestsInSort test_sort)
+
